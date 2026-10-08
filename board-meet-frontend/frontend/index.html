@@ -2,89 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>Dashboard</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Workspace</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <a href="#home" class="brand">
-        <span class="brand-logo">✦</span>
-        <span class="brand-text">AI Workspace</span>
-      </a>
+  <aside class="sidebar">
+    <a href="#home" class="brand">
+      <span class="brand-logo">✦</span>
+      <span class="brand-name">AI Workspace</span>
+    </a>
 
-      <nav id="navigation" class="navigation"></nav>
+    <nav id="navigation"></nav>
 
-      <div class="storage">
-        <p>Cloud Storage</p>
+    <div class="storage">
+      <p>Cloud Storage</p>
 
-        <div class="storage-content">
-          <span class="storage-icon" data-icon="cloud"></span>
+      <div class="storage-content">
+        <span class="storage-icon">☁</span>
 
-          <div class="storage-details">
-            <div class="storage-track">
-              <div class="storage-progress"></div>
-            </div>
-
-            <span>48.5 GB of 1 TB</span>
+        <div class="storage-details">
+          <div class="storage-track">
+            <div class="storage-progress"></div>
           </div>
+          <small>48.5 GB of 1 TB</small>
         </div>
       </div>
-    </aside>
+    </div>
+  </aside>
 
-    <main class="main">
-      <header class="header">
-        <div class="page-heading">
-          <h1 id="page-title"></h1>
-          <p id="page-subtitle"></p>
+  <main class="main">
+    <header class="header">
+      <div class="heading">
+        <h1 id="page-title"></h1>
+        <p id="page-description"></p>
+      </div>
+
+      <div id="header-actions" class="header-actions"></div>
+
+      <details class="account">
+        <summary>
+          <span class="avatar">G</span>
+          <span class="account-label">Account</span>
+          <span class="account-chevron">⌄</span>
+        </summary>
+
+        <div class="account-menu">
+          <strong>Ganesan</strong>
+          <p>Personal workspace</p>
+          <small>Frontend demo</small>
         </div>
+      </details>
+    </header>
 
-        <div id="header-actions" class="header-actions"></div>
+    <div id="page-content"></div>
+  </main>
 
-        <details class="account">
-          <summary>
-            <span class="avatar">G</span>
-            <span class="account-label">Account</span>
-            <span class="account-arrow">⌄</span>
-          </summary>
-
-          <div class="account-menu">
-            <strong>Ganesan</strong>
-            <p>Personal workspace</p>
-            <small>Frontend demo</small>
-          </div>
-        </details>
-      </header>
-
-      <div id="page-content" class="page-content"></div>
-    </main>
-  </div>
-
-  <dialog id="note-dialog" class="modal">
+  <dialog id="note-dialog">
     <form id="note-form">
-      <div class="modal-heading">
+      <div class="dialog-heading">
         <h2>Create new note</h2>
-
         <button
           type="button"
           class="icon-button"
-          id="close-note"
+          id="close-note-dialog"
           aria-label="Close dialog"
-        >
-          ×
-        </button>
+        >×</button>
       </div>
 
       <label for="note-title">Title</label>
-
       <input
         id="note-title"
         name="title"
@@ -94,7 +81,6 @@
       />
 
       <label for="note-body">Notes</label>
-
       <textarea
         id="note-body"
         name="body"
@@ -104,72 +90,54 @@
       ></textarea>
 
       <label for="note-color">Color</label>
-
       <select id="note-color" name="color">
         <option value="blue">Blue</option>
         <option value="yellow">Yellow</option>
         <option value="green">Green</option>
       </select>
 
-      <div class="modal-footer">
-        <button type="submit" class="button primary">
-          Create note
-        </button>
-      </div>
+      <button type="submit" class="button primary">Create note</button>
     </form>
   </dialog>
 
-  <dialog id="report-dialog" class="modal report-modal">
-    <div class="modal-heading">
+  <dialog id="report-dialog">
+    <div class="dialog-heading">
       <h2>Shift 3 Report</h2>
-
       <button
+        type="button"
         class="icon-button"
-        id="close-report"
+        id="close-report-dialog"
         aria-label="Close report"
-      >
-        ×
-      </button>
+      >×</button>
     </div>
 
     <p class="muted">September 16, 2026 · Sample report</p>
 
-    <section class="report-section">
-      <h3>Team Sync</h3>
+    <h3>Team Sync</h3>
+    <ul>
+      <li>Discuss shift 3</li>
+      <li>Check pending jobs</li>
+      <li>Review reports</li>
+    </ul>
 
-      <ul>
-        <li>Discuss shift 3</li>
-        <li>Check pending jobs</li>
-        <li>Review reports</li>
-      </ul>
-    </section>
+    <h3>Action Items</h3>
+    <ul>
+      <li>Update Excel sheet</li>
+      <li>Send summary email</li>
+      <li>Prepare client deck</li>
+    </ul>
 
-    <section class="report-section">
-      <h3>Action Items</h3>
+    <h3>Issues</h3>
+    <ul>
+      <li>Job 4821 delayed</li>
+      <li>Need vendor confirmation</li>
+      <li>Follow up tomorrow</li>
+    </ul>
 
-      <ul>
-        <li>Update Excel sheet</li>
-        <li>Send summary email</li>
-        <li>Prepare client deck</li>
-      </ul>
-    </section>
-
-    <section class="report-section">
-      <h3>Issues</h3>
-
-      <ul>
-        <li>Job 4821 delayed</li>
-        <li>Need vendor confirmation</li>
-        <li>Follow up tomorrow</li>
-      </ul>
-    </section>
-
-    <p class="demo-caption">
-      Sample content only. External accounts are not connected.
-    </p>
+    <p class="muted">Sample content only. External accounts are not connected.</p>
   </dialog>
 
-  <div id="toast" class="toast" role="status"></div>
+  <div id="toast" role="status"></div>
 
   <script src="app.js"></script>
 </body>
